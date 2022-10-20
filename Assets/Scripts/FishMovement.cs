@@ -4,24 +4,28 @@ using UnityEngine;
 
 public class FishMovement : MonoBehaviour
 {
+    Vector3 dir;
     // Start is called before the first frame update
     void Start()
     {
-        if (transform.position.x > 0 ) 
+        int x = Random.Range(0, 2);
+        if (x == 0)
         {
-            transform.position -= new Vector3((Random.Range(1,10)), 0, 0) * Time.deltaTime; //När x > 0 så åker den till vänster - Leo
-            //flytta vänster
+            x = -1;
         }
-        else
-        {
-            transform.position += new Vector3((Random.Range(1, 10)), 0, 0) * Time.deltaTime; //När x < 0 så åker den till höger - Leo
-            //höger
-        }
+        dir = new Vector3(x, 0, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position += dir * Random.Range(3,8) * Time.deltaTime; 
+        if (transform.position.x > 5 )
+        {
+            dir.x = -1; //När x > 5 så åker den till vänster - Leo
+        } else if (transform.position.x < -5)
+        {
+            dir.x = 1;  //När x < -5 så åker den till höger - Leo
+        }
     }
 }
