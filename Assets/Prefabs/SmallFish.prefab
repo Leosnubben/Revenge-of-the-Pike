@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4300860602768862281}
   - component: {fileID: 4300860602768862278}
+  - component: {fileID: 1506818630188994963}
   m_Layer: 0
   m_Name: SmallFish
   m_TagString: Untagged
@@ -84,3 +85,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1506818630188994963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4300860602768862279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3321cb1ef7c98f14ea999d921d502bbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
