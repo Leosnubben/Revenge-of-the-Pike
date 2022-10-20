@@ -10,7 +10,7 @@ public class FishSpawner : MonoBehaviour
     public GameObject[] spawnPoints;
 
     float spawnTimer = 1f;
-    int fishCount;
+    public static int fishCount = 0;
     bool spawnFish = true;
 
     void Start()
@@ -21,13 +21,16 @@ public class FishSpawner : MonoBehaviour
     
     void Update()
     {
-        
-        if(fishCount <= 20 && spawnFish)
+        spawnTimer -= Time.deltaTime;
+        if(spawnFish)
         {
-            if(spawnTimer <= 0)
+            if(fishCount <= 20 && spawnTimer <= 0)
             {
-                Instantiate(fishes[0], spawnPoints[0].transform.position, Quaternion.identity);
+                Instantiate(fishes[Random.Range(0, fishes.Length)], spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position, Quaternion.identity);
+                spawnTimer = 1f;
+                fishCount += 1;
             }
         }
+
     }
 }
