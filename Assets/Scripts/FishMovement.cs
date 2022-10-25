@@ -20,10 +20,10 @@ public class FishMovement : MonoBehaviour
     void Update()
     {
         transform.position += dir * Random.Range(3,8) * Time.deltaTime; 
-        if (transform.position.x > 5 )
+        if (transform.position.x > 12)
         {
             dir.x = -1; //När x > 5 så åker den till vänster - Leo
-        } else if (transform.position.x < -5)
+        } else if (transform.position.x < -12)
         {
             dir.x = 1;  //När x < -5 så åker den till höger - Leo
         }
