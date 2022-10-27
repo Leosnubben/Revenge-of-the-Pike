@@ -9,6 +9,8 @@ public class HarpoonMove : MonoBehaviour
     float speed;
     Rigidbody2D rb;
 
+    public GameObject harpoonDeleter;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -30,7 +32,7 @@ public class HarpoonMove : MonoBehaviour
 
         if (shoot)
         {
-            rb.velocity = new Vector2(0, 5);
+            rb.velocity = new Vector2(0, 30);
         }
 
         else if (drag)
@@ -41,6 +43,14 @@ public class HarpoonMove : MonoBehaviour
         else
         {
             rb.velocity = new Vector2(0, 0);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "HarpoonDeleter")
+        {
+            Destroy(gameObject);
         }
     }
 }
