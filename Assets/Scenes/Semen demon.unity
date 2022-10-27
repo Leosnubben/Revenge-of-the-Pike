@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 207421251}
   - component: {fileID: 207421250}
   m_Layer: 0
-  m_Name: Audio controller
+  m_Name: Audio Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 512043546}
   - component: {fileID: 512043545}
   m_Layer: 0
-  m_Name: bEtter harpoon
+  m_Name: Better Harpoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
