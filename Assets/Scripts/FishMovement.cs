@@ -26,7 +26,7 @@ public class FishMovement : MonoBehaviour  //Leos kod
         gupptimer -= Time.deltaTime;
         Vector3 tempPos = transform.position;
          tempPos += dir * Random.Range(3, 8) * Time.deltaTime;  //Leo
-        tempPos.y = transform.position.y + Mathf.Sin(tempPos.x *1) * 0.001f; //Leo
+        tempPos.y = transform.position.y + Mathf.Sin(tempPos.x *1) * 0.01f; //Leo
         if (transform.position.x > 12)
         {
             dir.x = -1; //När x > 5 så åker den till vänster - Leo
