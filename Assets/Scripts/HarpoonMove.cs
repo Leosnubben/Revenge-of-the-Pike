@@ -64,7 +64,7 @@ public class HarpoonMove : MonoBehaviour
         {
             
             giveScore = true;
-            Destroy(gameObject, 1);
+            Destroy(gameObject);
         }
     }
 
