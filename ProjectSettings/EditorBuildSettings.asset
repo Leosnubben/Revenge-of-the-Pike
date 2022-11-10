@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Fish Shooter.unity
+    guid: 96638ecf1f483144d9199294995b60d2
   m_configObjects: {}
