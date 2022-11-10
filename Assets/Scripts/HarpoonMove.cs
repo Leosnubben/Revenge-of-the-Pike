@@ -8,12 +8,15 @@ public class HarpoonMove : MonoBehaviour
     bool drag;
     float speed;
     Rigidbody2D rb;
+    public bool giveScore = false;
 
     public GameObject harpoonDeleter;
+    BoxCollider2D bc;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        bc = GetComponent<BoxCollider2D>();
     }
 
     
@@ -33,11 +36,13 @@ public class HarpoonMove : MonoBehaviour
         if (shoot)
         {
             rb.velocity = new Vector2(0, 30);
+            bc.enabled = true;
         }
 
         else if (drag)
         {
             rb.velocity = new Vector2(0, -3);
+            bc.enabled = false;
         }
 
         else
@@ -48,9 +53,20 @@ public class HarpoonMove : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.tag == "Fish")
+        {
+            collision.gameObject.transform.parent = gameObject.transform;
+            collision.gameObject.GetComponent<FishMovement>().enabled = false;
+            giveScore = false;
+        }
+
         if (collision.gameObject.tag == "HarpoonDeleter")
         {
-            Destroy(gameObject);
+            
+            giveScore = true;
+            Destroy(gameObject, 1);
         }
     }
+
+    //Hela koden skriven av Simon
 }

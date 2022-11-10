@@ -23,4 +23,6 @@ public class Harpoon : MonoBehaviour
             shootCooldown = 2f;
         }
     }
+
+    //Hela koden skriven av Simon
 }

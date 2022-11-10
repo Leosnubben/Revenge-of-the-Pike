@@ -33,4 +33,6 @@ public class FishSpawner : MonoBehaviour
         }
 
     }
+
+    //Hela koden skriven av Simon
 }

@@ -21,4 +21,6 @@ public class Fisher : MonoBehaviour
 
         rb.velocity = new Vector2(horizontalInput * moveSpeed, 0);
     }
+
+    //Hela koden skriven av Simon
 }

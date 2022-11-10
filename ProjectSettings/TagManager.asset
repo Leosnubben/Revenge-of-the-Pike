@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - HarpoonDeleter
+  - Fish
   layers:
   - Default
   - TransparentFX

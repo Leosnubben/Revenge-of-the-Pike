@@ -7,16 +7,32 @@ public class Score : MonoBehaviour
 {
     public static int scoreValue = 0;
     Text score;
-    // Start is called before the first frame update
+
+    HarpoonMove[] harpoons; //Simon
+    
     void Start()
     {
         score = GetComponent<Text>();
+        score.text = "Score: " + scoreValue;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        score.text = "score: " + scoreValue;
+        if (harpoons != null) //Simon
+        {
+            foreach (HarpoonMove harpoon in harpoons) //Simon
+            {
+                if (harpoon.giveScore) //Simon
+                {
+                    scoreValue += 1; //Simon
+                    score.text = "Score: " + scoreValue; // Jay
+                    harpoon.giveScore = false; //Simon
+                }
+            }
+        }
+
+        harpoons = FindObjectsOfType<HarpoonMove>(); //Simon
     }
-    //Score koden - Jay
+    //Score koden - Jay (ALLT SOM INTE ÄR MARKERAT MED //SIMON ÄR JAYS)
 }
