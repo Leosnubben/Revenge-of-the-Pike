@@ -24,7 +24,9 @@ public class FishMovement : MonoBehaviour
     void Update()
     {
         gupptimer -= Time.deltaTime;
-        transform.position += dir * Random.Range(3,8) * Time.deltaTime; 
+        Vector3 tempPos = transform.position;
+         tempPos += dir * Random.Range(3, 8) * Time.deltaTime;
+        tempPos.y = transform.position.y + Mathf.Sin(tempPos.x * 2) * 0.15f;
         if (transform.position.x > 12)
         {
             dir.x = -1; //När x > 5 så åker den till vänster - Leo
@@ -34,5 +36,12 @@ public class FishMovement : MonoBehaviour
             dir.x = 1;  //När x < -5 så åker den till höger - Leo
             fiskbilder.flipX = true;
         }
+        transform.position = new Vector3(0, 1, 0);
+        if (gupptimer <= 0)
+        {
+            transform.position *= -1;
+            gupptimer = 0.5f;
+        }
+        transform.position = tempPos;
     }
-}
+} 
