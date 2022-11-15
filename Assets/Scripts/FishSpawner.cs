@@ -10,7 +10,7 @@ public class FishSpawner : MonoBehaviour
     public GameObject[] spawnPoints;
 
     float spawnTimer = 1f;
-    public static int fishCount = 0;
+    public int fishCount = 0;
     bool spawnFish = true;
 
     void Start()
@@ -30,6 +30,7 @@ public class FishSpawner : MonoBehaviour
                 spawnTimer = 1f;
                 fishCount += 1;
             }
+            print(fishCount);
         }
 
     }

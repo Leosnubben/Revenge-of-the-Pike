@@ -62,7 +62,6 @@ public class HarpoonMove : MonoBehaviour
 
         if (collision.gameObject.tag == "HarpoonDeleter")
         {
-            
             giveScore = true;
             Destroy(gameObject);
         }

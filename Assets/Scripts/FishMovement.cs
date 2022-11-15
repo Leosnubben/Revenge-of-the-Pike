@@ -8,6 +8,9 @@ public class FishMovement : MonoBehaviour  //Leos kod
     SpriteRenderer fiskbilder;
     Vector3 dir;
     float gupptimer = 0.5f;
+
+    FishSpawner spawner; //Simon
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +21,8 @@ public class FishMovement : MonoBehaviour  //Leos kod
             x = -1;
         }
         dir = new Vector3(x, 0, 0);
+
+        spawner = FindObjectOfType<FishSpawner>(); //Simon
     }
 
     // Update is called once per frame
@@ -43,5 +48,10 @@ public class FishMovement : MonoBehaviour  //Leos kod
             gupptimer = 0.5f;
         }
         transform.position = tempPos;
+    }
+
+    private void OnDestroy() //Simon
+    {
+        spawner.fishCount -= 1; //Simon
     }
 } 

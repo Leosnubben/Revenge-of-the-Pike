@@ -8,6 +8,7 @@ public class Fisher : MonoBehaviour
     public float moveSpeed;
 
     Rigidbody2D rb;
+    
 
     void Start()
     {
@@ -21,6 +22,8 @@ public class Fisher : MonoBehaviour
 
         rb.velocity = new Vector2(horizontalInput * moveSpeed, 0);
     }
+
+    
 
     //Hela koden skriven av Simon
 }
